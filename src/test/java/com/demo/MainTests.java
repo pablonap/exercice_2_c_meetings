@@ -10,22 +10,37 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainTests {
+    private final int START_HOUR_MEETING_1 = 14;
+    private final int START_MINUTES_MEETING_1 = 30;
+    private final int END_HOUR_MEETING_1 = 15;
+    private final int END_MINUTES_MEETING_1 = 30;
+    private final int START_HOUR_MEETING_2 = 15;
+    private final int START_MINUTES_MEETING_2 = 31;
+    private final int END_HOUR_MEETING_2 = 16;
+    private final int END_MINUTES_MEETING_2 = 31;
+
     @Test
     @DisplayName("Should not add new meeting when it ends at the same time another starts.")
     void test1() {
         // given
-        MeetingService meetingService = new MeetingService();
+        final MeetingService meetingService = new MeetingService();
+
+        final int START_HOUR_NEW_MEETING = 14;
+        final int START_MINUTES_NEW_MEETING = 00;
+        final int END_HOUR_NEW_MEETING = 14;
+        final int END_MINUTES_NEW_MEETING = 30;
 
         addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                15,
-                31,
-                16,
-                31);
-        Meeting newMeeting = createMeeting(14, 00, 14, 30);
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
 
         //when
         meetingService.addMeeting(newMeeting);
@@ -40,16 +55,22 @@ public class MainTests {
         // given
         MeetingService meetingService = new MeetingService();
 
+        final int START_HOUR_NEW_MEETING = 14;
+        final int START_MINUTES_NEW_MEETING = 00;
+        final int END_HOUR_NEW_MEETING = 15;
+        final int END_MINUTES_NEW_MEETING = 00;
+
         addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                15,
-                31,
-                16,
-                31);
-        Meeting newMeeting = createMeeting(14, 00, 15, 00);
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
 
         //when
         meetingService.addMeeting(newMeeting);
@@ -64,16 +85,22 @@ public class MainTests {
         // given
         MeetingService meetingService = new MeetingService();
 
+        final int START_HOUR_NEW_MEETING = 14;
+        final int START_MINUTES_NEW_MEETING = 30;
+        final int END_HOUR_NEW_MEETING = 15;
+        final int END_MINUTES_NEW_MEETING = 30;
+
         addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                15,
-                31,
-                16,
-                31);
-        Meeting newMeeting = createMeeting(14, 30, 15, 30);
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
 
         //when
         meetingService.addMeeting(newMeeting);
@@ -88,16 +115,22 @@ public class MainTests {
         // given
         MeetingService meetingService = new MeetingService();
 
+        final int START_HOUR_NEW_MEETING = 15;
+        final int START_MINUTES_NEW_MEETING = 30;
+        final int END_HOUR_NEW_MEETING = 16;
+        final int END_MINUTES_NEW_MEETING = 30;
+
         addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                15,
-                31,
-                16,
-                31);
-        Meeting newMeeting = createMeeting(15, 30, 16, 30);
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
 
         //when
         meetingService.addMeeting(newMeeting);
@@ -112,16 +145,22 @@ public class MainTests {
         // given
         MeetingService meetingService = new MeetingService();
 
+        final int START_HOUR_NEW_MEETING = 14;
+        final int START_MINUTES_NEW_MEETING = 29;
+        final int END_HOUR_NEW_MEETING = 15;
+        final int END_MINUTES_NEW_MEETING = 31;
+
         addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                15,
-                31,
-                16,
-                31);
-        Meeting newMeeting = createMeeting(14, 29, 15, 31);
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
 
         //when
         meetingService.addMeeting(newMeeting);
@@ -136,16 +175,22 @@ public class MainTests {
         // given
         MeetingService meetingService = new MeetingService();
 
+        final int START_HOUR_NEW_MEETING = 14;
+        final int START_MINUTES_NEW_MEETING = 00;
+        final int END_HOUR_NEW_MEETING = 14;
+        final int END_MINUTES_NEW_MEETING = 29;
+
         addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                15,
-                31,
-                16,
-                31);
-        Meeting newMeeting = createMeeting(14, 00, 14, 29);
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
 
         //when
         meetingService.addMeeting(newMeeting);
@@ -160,16 +205,22 @@ public class MainTests {
         // given
         MeetingService meetingService = new MeetingService();
 
+        final int START_HOUR_NEW_MEETING = 16;
+        final int START_MINUTES_NEW_MEETING = 32;
+        final int END_HOUR_NEW_MEETING = 17;
+        final int END_MINUTES_NEW_MEETING = 01;
+
         addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                15,
-                31,
-                16,
-                31);
-        Meeting newMeeting = createMeeting(16, 32, 17, 01);
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
 
         //when
         meetingService.addMeeting(newMeeting);
@@ -184,16 +235,27 @@ public class MainTests {
         // given
         MeetingService meetingService = new MeetingService();
 
+        final int START_HOUR_MEETING_2 = 16;
+        final int START_MINUTES_MEETING_2 = 00;
+        final int END_HOUR_MEETING_2 = 17;
+        final int END_MINUTES_MEETING_2 = 00;
+
+        final int START_HOUR_NEW_MEETING = 15;
+        final int START_MINUTES_NEW_MEETING = 35;
+        final int END_HOUR_NEW_MEETING = 15;
+        final int END_MINUTES_NEW_MEETING = 55;
+
         addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                16,
-                00,
-                17,
-                00);
-        Meeting newMeeting = createMeeting(15, 35, 15, 55);
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
 
         //when
         meetingService.addMeeting(newMeeting);
@@ -208,17 +270,24 @@ public class MainTests {
         // given
         MeetingService meetingService = new MeetingService();
 
-        addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                15,
-                31,
-                16,
-                31);
-        Meeting newMeeting = createMeeting(13, 00, 13, 05);
+        final int START_HOUR_NEW_MEETING = 13;
+        final int START_MINUTES_NEW_MEETING = 00;
+        final int END_HOUR_NEW_MEETING = 13;
+        final int END_MINUTES_NEW_MEETING = 05;
 
+        addMeetingsByDefault(meetingService,
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
+
+        // when/then
         assertThatThrownBy(() -> meetingService.addMeeting(newMeeting))
                 .isInstanceOf(RuntimeException.class);
     }
@@ -229,19 +298,86 @@ public class MainTests {
         // given
         MeetingService meetingService = new MeetingService();
 
-        addMeetingsByDefault(meetingService,
-                14,
-                30,
-                15,
-                30,
-                15,
-                31,
-                16,
-                31);
-        Meeting newMeeting = createMeeting(12, 00, 14, 00);
+        final int START_HOUR_NEW_MEETING = 12;
+        final int START_MINUTES_NEW_MEETING = 00;
+        final int END_HOUR_NEW_MEETING = 14;
+        final int END_MINUTES_NEW_MEETING = 00;
 
+        addMeetingsByDefault(meetingService,
+                START_HOUR_MEETING_1,
+                START_MINUTES_MEETING_1,
+                END_HOUR_MEETING_1,
+                END_MINUTES_MEETING_1,
+                START_HOUR_MEETING_2,
+                START_MINUTES_MEETING_2,
+                END_HOUR_MEETING_2,
+                END_MINUTES_MEETING_2);
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
+
+        // when/then
         assertThatThrownBy(() -> meetingService.addMeeting(newMeeting))
                 .isInstanceOf(RuntimeException.class);
+    }
+
+    @Test
+    @DisplayName("Should add a new meeting when there is no other previously.")
+    void test12() {
+        // given
+        MeetingService meetingService = new MeetingService();
+
+        final int START_HOUR_NEW_MEETING = 12;
+        final int START_MINUTES_NEW_MEETING = 00;
+        final int END_HOUR_NEW_MEETING = 12;
+        final int END_MINUTES_NEW_MEETING = 20;
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
+
+        // when
+        meetingService.addMeeting(newMeeting);
+
+        // then
+        assertEquals(1, meetingService.getMeetings().size());
+    }
+
+    @Test
+    @DisplayName("Should add a new meeting when it takes exactly fifteen minutes")
+    void test13() {
+        // given
+        MeetingService meetingService = new MeetingService();
+
+        final int START_HOUR_NEW_MEETING = 12;
+        final int START_MINUTES_NEW_MEETING = 00;
+        final int END_HOUR_NEW_MEETING = 12;
+        final int END_MINUTES_NEW_MEETING = 15;
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
+
+        // when
+        meetingService.addMeeting(newMeeting);
+
+        // then
+        assertEquals(1, meetingService.getMeetings().size());
+    }
+
+    @Test
+    @DisplayName("Should add a new meeting when it takes exactly ninety minutes")
+    void test14() {
+        // given
+        MeetingService meetingService = new MeetingService();
+
+        final int START_HOUR_NEW_MEETING = 12;
+        final int START_MINUTES_NEW_MEETING = 00;
+        final int END_HOUR_NEW_MEETING = 13;
+        final int END_MINUTES_NEW_MEETING = 30;
+
+        Meeting newMeeting = createMeeting(START_HOUR_NEW_MEETING, START_MINUTES_NEW_MEETING, END_HOUR_NEW_MEETING, END_MINUTES_NEW_MEETING);
+
+        // when
+        meetingService.addMeeting(newMeeting);
+
+        // then
+        assertEquals(1, meetingService.getMeetings().size());
     }
 
     private Meeting createMeeting( int startHourMeeting,
