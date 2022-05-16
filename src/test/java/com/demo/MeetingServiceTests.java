@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MainTests {
+public class MeetingServiceTests {
     private final int START_HOUR_MEETING_1 = 14;
     private final int START_MINUTES_MEETING_1 = 30;
     private final int END_HOUR_MEETING_1 = 15;
