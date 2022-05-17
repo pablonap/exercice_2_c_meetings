@@ -564,6 +564,30 @@ public class MeetingServiceTests {
         assertEquals(2, meetingService.getMeetings().size());
     }
 
+    @Test
+    @DisplayName("Should not add a new meeting when it takes more than one day")
+    void test16() {
+        // given
+        final int START_DAY_OF_MONTH = 16;
+        final int END_DAY_OF_MONTH = 18;
+        final int START_HOUR_NEW_MEETING = 23;
+        final int START_MINUTES_NEW_MEETING = 50;
+        final int END_HOUR_NEW_MEETING = 00;
+        final int END_MINUTES_NEW_MEETING = 10;
+
+        Meeting newMeeting = createMeeting(
+                START_DAY_OF_MONTH,
+                END_DAY_OF_MONTH,
+                START_HOUR_NEW_MEETING,
+                START_MINUTES_NEW_MEETING,
+                END_HOUR_NEW_MEETING,
+                END_MINUTES_NEW_MEETING);
+
+        // when/then
+        assertThatThrownBy(() -> meetingService.addMeeting(newMeeting))
+                .isInstanceOf(RuntimeException.class);
+    }
+
     private Meeting createMeeting(int startDayOfMonth,
                                   int endDayOfMonth,
                                   int startHourMeeting,
