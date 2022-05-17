@@ -11,10 +11,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MeetingServiceTests {
-    final int START_DAY_OF_MONTH_MEETING_1 = 18;
-    final int END_DAY_OF_MONTH_MEETING_1 = 18;
-    final int START_DAY_OF_MONTH_MEETING_2 = 18;
-    final int END_DAY_OF_MONTH_MEETING_2 = 18;
+    private final int START_DAY_OF_MONTH_MEETING_1 = 18;
+    private final int END_DAY_OF_MONTH_MEETING_1 = 18;
+    private final int START_DAY_OF_MONTH_MEETING_2 = 18;
+    private final int END_DAY_OF_MONTH_MEETING_2 = 18;
 
     private final int START_DAY_OF_MONTH_NEW_MEETING = 17;
     private final int END_DAY_OF_MONTH_NEW_MEETING = 17;
