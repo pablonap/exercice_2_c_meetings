@@ -16,12 +16,26 @@ public class Meeting {
         this.tenantName = tenantName;
 
         LocalTime startingTime = fromDateTime.toLocalTime();
-        int startingMinutes = startingTime.getHour() * 60
-                + startingTime.getMinute();
-
         LocalTime endingTime = toDateTime.toLocalTime();
-        int endingMinutes = endingTime.getHour() * 60
-                + endingTime.getMinute();
+
+        int startingMinutes;
+        int endingMinutes;
+
+        if(startingTime.getHour() == 0) {
+            startingMinutes = 24 * 60
+                    + startingTime.getMinute();
+        } else {
+            startingMinutes = startingTime.getHour() * 60
+                    + startingTime.getMinute();
+        }
+
+        if(endingTime.getHour() == 0) {
+            endingMinutes = 24 * 60
+                    + endingTime.getMinute();
+        } else {
+            endingMinutes = endingTime.getHour() * 60
+                    + endingTime.getMinute();
+        }
 
         this.startingTimeInMinutes = startingMinutes;
         this.endingTimeInMinutes = endingMinutes;
