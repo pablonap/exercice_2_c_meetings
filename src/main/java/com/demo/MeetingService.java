@@ -19,15 +19,11 @@ public class MeetingService {
 
         return meetings.stream()
                 .anyMatch(m -> {
-                    if (newMeeting.getStartingTimeInMinutes() >= m.getStartingTimeInMinutes()
+                    return (newMeeting.getStartingTimeInMinutes() >= m.getStartingTimeInMinutes()
                             && newMeeting.getStartingTimeInMinutes() <= m.getEndingTimeInMinutes()
                             || newMeeting.getEndingTimeInMinutes() >= m.getStartingTimeInMinutes()
                             && newMeeting.getEndingTimeInMinutes() <= m.getEndingTimeInMinutes()
-                    ) {
-                        return true;
-                    } else {
-                        return false;
-                    }
+                    );
                 });
     }
 
